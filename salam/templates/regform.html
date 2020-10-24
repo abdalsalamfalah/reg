@@ -1,0 +1,415 @@
+    {% load static %}
+    {% load crispy_forms_tags %}
+
+<!doctype html>
+<html lang="en" dir='rtl'>
+    <div> 
+<h1> أحــجز الان, الرجاء ادخل معلومات حجزك </h1>
+   <a  href="{% url 'index' %}" class="btn btn-dark"> قائمـة الحجــز </a>  <a  href="{% url 'me' %}" class="btn btn-outline-light"> حــول المطــور  </a>
+</div>
+    
+  <head>
+{% if messages %}
+{% for ms in messages %}
+
+<div class='alert alert-{{ms.tags}}' align='center'>
+ <font>{{ms}} <h>  {{infor.count}}</h></font>
+</div>
+
+{% endfor %}
+{% endif %} 
+    <title>واجهــة الحجــز</title>
+ 
+    <meta charset="utf-8">
+    <title>الحجز الان</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+<style>
+font {
+font-weight: bold;
+}
+h1{
+text-align: right;
+}
+h{
+font-size: 25px;
+color: red;
+}
+
+
+form{
+font-size: 20px;
+color: black;
+font-weight: bold;
+}
+body{
+font-family: Tajawal;
+background-image: url({% static "img/bcm.jpg" %});
+}
+marquee{
+font-family: Tajawal;
+color: black;
+font-size: 25px;
+font-weight: bold;
+
+}
+#divform{
+
+font-size: 25px;}
+
+
+
+
+
+
+
+h1,#drname {
+  color: black;
+  animation-name: example;
+  animation-duration: 30s;
+}
+
+@keyframes example {
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+
+0%   {color: red;}
+5%  {color: yellow;}
+10%  {color: blue;}
+15%  {color: red;}
+20%  {color: yellow;}
+25%  {color:blue;}
+30%  {color: green;}
+40%  {color: yellow;}
+50%  {color: blue;}
+100% {color: green;}
+}
+
+
+
+
+</style>
+    
+    
+  </head>
+  <body id='form'>
+ 
+<div id='divform' align='center' class="col-md-4 offset-md-3">
+ <h class="btn btn-warning"> عــدد المــرضى الحاجزين :{{infor.count}}</h> 
+</br> 
+
+<form class="btn btn-warning" action="" method="POST" dir="rtl">
+
+{% csrf_token %}
+{{formregister|crispy}}
+
+<button id="divform" type="submit" class="btn btn-outline-dark" >حـــجز</button>
+</div>
+
+</form>
+</div>
+
+</br> 
+</br> 
+<div  class="btn btn-outline-dark">
+<h4>تــواصـل معي  على</h4>
+<a href="https://www.facebook.com/so0909"><i class="fab fa-facebook btn btn-outline-warning"></i></a>
+<a href="https://www.instagram.com/iraqknow"><i class="fab fa-instagram btn btn-outline-warning"></i></a>
+<i class="fab fa-twitter btn btn-outline-warning"></i>
+<a href="https://www.youtube.com/channel/UCB_JklqCMYPeVmnc8D_rRMA"><i class="fab fa-youtube btn btn-outline-warning"></i></a>
+<h4 class="fas fa-phone">07702920052</h4>
+</div>
+
+
+
+<br><br>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+        <font>  جميـع الحقوق محفوظة لمكتـب البارون ©</font>
+</html>
