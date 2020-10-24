@@ -1,1 +1,1 @@
-web: gunicorn django-root-reg.wsgi --log-file -
+web: gunicorn reg.wsgi --log-file -
