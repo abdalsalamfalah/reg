@@ -1,7 +1,6 @@
 alabaster==0.7.12
 altgraph==0.17
 anaconda-client==1.2.2
-AnyQt==0.0.10
 conda==4.8.4
 conda-build==3.18.11
 conda-package-handling==1.7.0
