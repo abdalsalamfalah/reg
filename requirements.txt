@@ -4,10 +4,6 @@ anaconda-client==1.2.2
 Django==3.0
 django-crispy-forms==1.9.2
 
-mysql==0.0.2
-mysql-connector-python==8.0.21
-
-
 requests @ file:///tmp/build/80754af9/requests_1592841827918/work
 requests-toolbelt==0.9.1
 responses==0.12.0
